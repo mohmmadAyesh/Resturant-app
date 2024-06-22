@@ -5,8 +5,8 @@ const cors=require('cors');
 const AuthRouter=require('./routes/auth.js');
 const MenuRouter=require('./routes/menu.js');
 const OrderRouter=require('./routes/order.js');
-require('dotenv').config();
 const app = express();
+require('dotenv').config();
 connectDB();
 app.use(cors());
 app.use(express.urlencoded({ extended:false}));
@@ -15,6 +15,6 @@ app.use('/auth',AuthRouter);
 app.use('/menu',MenuRouter);
 app.use('/order',OrderRouter);
 app.use(handleErrors);
-const PORT=process.env.PORT  || 5000;
+const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => console.log('app is listening on port 5000'));
 
