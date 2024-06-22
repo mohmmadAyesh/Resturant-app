@@ -26,19 +26,25 @@ const signup=async (req,res,next) => {
     
 }
 const login=async(req,res,next) => {
-    const {username, password } =  req.body;
+    const { username, password } =  req.body;
+    console.log('username: ',username);
     try{
         let user = await User.findOne({ username });
         if(!user){
+            console.log('username not found');
             next(new CustomError('Invalid credentials',400));
         }
         const isMatch = await bcrypt.compare(password,user.password);
         if (!isMatch) {
+            console.log('password didnt match');
             next(new CustomError('Invalid credentials',400));
         }
         const payload = {user : {id : user.id}};
         jwt.sign(payload, process.env.JWT_SECRET,{ expiresIn:360000}, (err,token) => {
-            if(err) next( new CustomError(err.message) );
+            console.log('verifying jwt');
+            if(err) {
+                console.log('fuck an error happened');  
+                next( new CustomError(err.message) );}
             return res.status(201).json({token});
         });
     } catch (err) {
@@ -46,7 +52,18 @@ const login=async(req,res,next) => {
         next(new CustomError('Server error'));
     }
 }
+const getAuthUser = async (req,res,next)=>{
+    const { id }=req.body;
+    try{
+        const user = await User.findById( req.user.id ).select('-password');
+        res.json(user);
+    } catch (err) {
+        console.log(err.message);
+        next(new CustomError('Server error'));
+    }
+}
 module.exports={
     signup,
-    login
+    login,
+    getAuthUser,
 }
