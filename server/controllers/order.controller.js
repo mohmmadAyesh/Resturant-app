@@ -3,7 +3,7 @@ const CustomError = require('../utils/CustomError.js');
 const placeOrder = async (req, res,next) => {
     const { items, totalPrice } = req.body;
     try {
-        const newOrder = new Order({ items, totalPrice, orderedBy: req.params.id });
+        const newOrder = new Order({ items, totalPrice, orderedBy: req.user.id });
         await newOrder.save();
         res.json(newOrder);
     } catch (err) {
