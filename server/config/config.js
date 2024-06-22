@@ -1,11 +1,15 @@
+require('dotenv').config();
+
 const config = {
     database: {
-        uri:
-            NODE_ENV === "development"
-                ? DEVELOPMENT_DATABASE_URL
-                : NODE_ENV === "test"
-                    ? TEST_DATABASE_URL
-                    : PRODUCTION_DATABASE_URL,
+        uri: process.env.MONGO_URI
+    },
+    server: {
+        port: process.env.PORT || 5000
+    },
+    jwt: {
+        secret: process.env.JWT_SECRET
     }
-}
-module.exports=config;
+};
+
+module.exports = config;
