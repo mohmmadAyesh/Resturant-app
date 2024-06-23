@@ -7,9 +7,9 @@ This is Repo about Our Simple Restaurant App lets explain what it is
 4-then go to client folder by typing   ```cd  ..``` and then ```cd server```.<br>
 5-run ```npm init``` inside that folder <br>
 6-create a .env file in every folder in server and in client folder.<br>
-7- try to create **REACT_APP_API_URL** enviroment variable in ```.env``` file and give it a value of which port your server is running on. 
-8-open .env file in server folder and then try to create a **MONGO_URI** then  add **PORT** variable and add **JWT_SECRET** variable this variable is jwt secret key that used in jsonwebtoken library. 
-9- then at server folder run ``` npm start ```.
+7- try to create **REACT_APP_API_URL** enviroment variable in ```.env``` file and give it a value of which port your server is running on. <br>
+8-open .env file in server folder and then try to create a **MONGO_URI** then  add **PORT** variable and add **JWT_SECRET** variable this variable is jwt secret key that used in jsonwebtoken library. <br>
+9- then at server folder run ``` npm start ```. <br>
 10-and run ```npm start``` at client folder.
 ### congratulation .
 you will face a home page and 3 buttons logout, login , signup and home link 
