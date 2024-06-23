@@ -1,12 +1,12 @@
 import Login from './component/Auth/Login/Login.jsx';
 import SignUp from './component/Auth/SignUp/SignUp.jsx';
 import {BrowserRouter as Router, Route,Routes, useLocation} from 'react-router-dom';
-import Home from './pages/Home.js';
+import Home from './pages/Home/Home.js';
 import { AuthProvider } from './context/AuthContext';
-import Menu from './pages/Menu.js';
+import Menu from './pages/Menu/Menu.js';
 import Navbar from './component/layout/Navbar.jsx';
-import Profile from './pages/Profile.js';
-import Order from './pages/Order.js';
+import Profile from './pages/Profile/Profile.js';
+import Order from './pages/Order/Order.js';
 import PrivateRoute from './utils/PrivateRoute.js';
 import { useState } from 'react';
 import { OrderProvider } from './context/OrderContext.js';
