@@ -3,7 +3,6 @@ import profile from "../../../assets/profile-icon.svg";
 import {
   Wrapper,
   TextFieldWrapper,
-  Label,
   InputField,
   Svg,
   Button,
