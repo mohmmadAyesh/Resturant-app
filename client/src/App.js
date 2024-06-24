@@ -7,7 +7,6 @@ import Menu from "./pages/Menu/Menu.js";
 import Navbar from "./component/layout/Navbar.jsx";
 import Profile from "./pages/Profile/Profile.js";
 import Order from "./pages/Order/Order.js";
-import PrivateRoute from "./utils/PrivateRoute.js";
 import { OrderProvider } from "./context/OrderContext.js";
 function App() {
   return (
