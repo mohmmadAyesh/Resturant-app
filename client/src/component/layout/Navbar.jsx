@@ -12,7 +12,6 @@ const Navbar = () => {
   const locator = useLocation();
   const { pathname } = locator;
   const { user, logout } = useContext(AuthContext);
-  const False = false;
   return (
     <>
       {!(pathname === "/login" || pathname === "/signup") ? (
