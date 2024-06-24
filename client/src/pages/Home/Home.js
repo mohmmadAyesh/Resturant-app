@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../component/layout/Navbar";
 import { Wrapper, TitleContainer } from "./home.styles.js";
 
 const Home = () => {

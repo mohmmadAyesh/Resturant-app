@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import api from "../../api/api";
 import {
   Wrapper,
@@ -24,7 +24,7 @@ const Menu = () => {
     if (!user) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [navigate,user]);
   useEffect(() => {
     const fetchMenu = async () => {
       const res = await api.get("/menu");

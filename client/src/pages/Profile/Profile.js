@@ -13,7 +13,7 @@ const Profile = () => {
     if (!user) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [navigate,user]);
   useEffect(() => {
     const fetchOrders = async () => {
       try {

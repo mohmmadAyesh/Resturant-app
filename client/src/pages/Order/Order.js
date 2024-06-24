@@ -1,12 +1,8 @@
-import { useState, useEffect, useContext } from "react";
-import api from "../../api/api";
-import { useParams } from "react-router-dom";
+import {useEffect, useContext } from "react";
 import { OrderContext } from "../../context/OrderContext";
 import { Card, ItemCard } from "./order.styles";
 const Order = () => {
-  const { requiredOrder, setRequiredOrder } = useContext(OrderContext);
-  const { id } = useParams();
-  const [order, setOrder] = useState(null);
+  const { requiredOrder} = useContext(OrderContext);
   useEffect(() => {
     console.log(requiredOrder);
   }, [requiredOrder]);
